@@ -17,6 +17,13 @@ client/build/
 # ML model cache
 ML price/cache/
 
+# Large media files (too big for GitHub)
+*.mp4
+*.mov
+*.avi
+scratch/dummy*.jpg
+scratch/dummy*.png
+
 # OS files
 .DS_Store
 Thumbs.db
