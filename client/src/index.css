@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Global Visibility Fix for Inputs */
+input, 
+select, 
+textarea {
+  color: #1f2937 !important; /* Dark gray for maximum visibility */
+  background-color: #ffffff !important; /* Ensure white background */
+}
+
+/* Ensure placeholder text is also visible but distinct */
+::placeholder {
+  color: #9ca3af !important;
+  opacity: 1; /* Firefox fix */
+}
+
+/* Specific fix for Autofill (Chrome/Safari) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1f2937 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Universal Label Visibility - Reinforced for maximum contrast */
+label, 
+.form-group label,
+.modal-content label,
+.form-grid label {
+  color: #000000 !important; /* Pure black for maximum contrast on white modals */
+  font-weight: 700 !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.label {
+  color: #111827 !important;
+  font-weight: 600 !important;
+}
+
+/* Modern Top Notification System */
+.top-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 450px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 4px solid #e2e8f0;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.top-notification.success { border-left-color: #10b981; background: #f0fdf4; }
+.top-notification.error { border-left-color: #ef4444; background: #fef2f2; }
+.top-notification.warning { border-left-color: #f59e0b; background: #fffbeb; }
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.notification-icon { font-size: 18px; }
+
+.notification-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.notification-close:hover {
+  background: rgba(0,0,0,0.05);
+  color: #475569;
+}
